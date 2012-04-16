@@ -55,7 +55,7 @@ define(function() {
             ctx.translate(this.x,this.y);
             ctx.scale(this.scale,this.scale);
             if(typeof(opts.callback) === "function"){
-                this.callback.bind(this)(imgFuncs[pos]);
+                opts.callback.call(this, imgFuncs[pos]);
             }else{
                 imgFuncs[pos](ctx);
             }
